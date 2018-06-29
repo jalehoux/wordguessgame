@@ -1,0 +1,43 @@
+body {
+    background: url('../images/background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.container {
+    margin-bottom: 50px;
+}
+
+#word {
+    margin-bottom: 10px;
+}
+
+#lettersguessed {
+    padding: 5px;
+    background-color:lightblue;
+    border-radius: 25px;
+}
+.subtitle {
+    font-size:18px;
+    background-color:lightgrey;
+    border-radius: 25px;
+    margin: 0px 25px 15px 25px;
+}
+
+.jumbotron {
+    background: none;
+    text-align: center;
+    color:white;
+}
+
+.row {
+    background-color: white;
+    text-align: center;
+}
+
+.title {
+    background-color:grey;
+    border-radius: 25px;
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+}

@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
     </head>
     <body>
         <div class="container-fluid">
@@ -36,6 +37,7 @@
             <div class="jumbotron">
                 <h1 class="display-4">Star Wars Word Guess Game</h1>
                 <p class="lead">To start the game click one of the buttons below.</p>
+                <p class="lead"> You have seven ships to blow up the death star.  Every letter you miss 1 ship is blown up.  Guess the word before all of your ships are gone!</p>
                 <hr class="my-4">
                 <div class="btn-group" role="group" aria-label="Choose Word">
                         <button type="button" class="btn btn-primary" onclick="getword('chac')">Character</button>
@@ -46,27 +48,27 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        <div class="col-lg-12 border border-secondary" id="fullgame">
+                        <div class="col-lg-12" id="fullgame">
                             <div id="word">
-                                <p>Guess the word below!</p>
+                                <p class="title">Guess the word below!</p>
                                 <div id="hiddenword">
-                                    <span></span>
+                                    <span>No Word chosen!</span>
                                 </div>
                             </div>
                         </div> 
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 border border-secondary" id="dashboard">
-                            <p>Current Status and Dashboard</p>
+                        <div class="col-lg-12" id="dashboard">
+                            <p class="title">Game Dashboard</p>
                             <div id="lettersguessed">
-                                <p>Letters Already Guessed!</p>
-                                <div id="letters"></div>
+                                <p class="subtitle">Letters Already Guessed!</p>
+                                <div id="letters">No Letters Guessed</div>
                             </div>
                             <div id="remaining">
                                 <p>Remaining Letters: <span id="numletters"></span></p>
                             </div> 
                             <div id="ships">
-                                    <p>Remaining Ships: <span id="allships">7</span></p>
+                                <p>Remaining Ships: <span id="allships">7</span></p>
                             </div>  
                         </div> 
                     </div>
@@ -74,12 +76,17 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>Star Wars Facts/Quotes</p>  
+                            <p class="title">Star Wars Fan Section</p>  
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>Lifetime Stats</p>  
+                            <p class="title">Lifetime Stats</p>  
+                            <div id="stats">
+                                <p>Total Wins: <span id="totalwins">0</span></p>
+                                <p>Total Losses: <span id="totallosses">0</span></p>
+                                <p>Best Time <span id="besttime">00:00.00</span></p>
+                            </div>
                         </div> 
                     </div>
                 </div>

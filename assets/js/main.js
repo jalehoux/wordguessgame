@@ -1,8 +1,10 @@
-var word;
+var word='';
 var arrword;
 var answer =[];
 var numletters = 0;
 var ships = 7;
+var wins = 0;
+var losses= 0;
 
 var characters = [
     "LUKE SKYWALKER",
@@ -34,19 +36,26 @@ var planets = [
 ];
 
 $(document).keyup(function(event) {
-    a = document.getElementById("letters").innerHTML;
-    b = a.split(" ");
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-        var letter = event.key.toUpperCase();
-        if ( b.indexOf(letter) > -1){
-            alert("Choose another key");
-        } else {
-            var letter = event.key.toUpperCase();
-            document.getElementById("letters").innerHTML = a + " " + letter;
-            fillin(letter); 
+    if(word != ''){
+        a = document.getElementById("letters").innerHTML;
+        if(a=="No Letters Guessed") {
+            a = "";
         }
+        b = a.split(" ");
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            var letter = event.key.toUpperCase();
+            if ( b.indexOf(letter) > -1){
+                alert("You have already selected that key!");
+            } else {
+                var letter = event.key.toUpperCase();
+                document.getElementById("letters").innerHTML = a + " " + letter;
+                fillin(letter); 
+            }
+        } else {
+            alert("Choose a lowercase letter!");
+        } 
     } else {
-        alert("Choose a lowercase letter!");
+        alert("choose a word first!");
     }
 })
 
@@ -61,11 +70,18 @@ function fillin(c) {
         doc = answer.join(' ');
         document.getElementById("hiddenword").innerHTML= doc;
         document.getElementById("numletters").innerHTML= numletters;
+        if (numletters == 0) {
+            wins++;
+            reset("win");
+        }
     } else {
         ships--;
         document.getElementById("allships").innerHTML= ships;
-    }
-        
+        if(ships == 0) {
+            losses ++;
+            reset("loss");
+        }
+    }      
 }
 
 function getword(type) {
@@ -89,4 +105,19 @@ function getword(type) {
     })
     document.getElementById("hiddenword").innerHTML= doc;
     document.getElementById("numletters").innerHTML= numletters;
+}
+
+function reset(type) {
+    word='';
+    ships = 7;
+    answer= [];
+    document.getElementById("letters").innerHTML= "No Letters Guessed";
+    document.getElementById("hiddenword").innerHTML= "No Word chosen!";
+    document.getElementById("numletters").innerHTML= "";
+    document.getElementById("allships").innerHTML= 7;
+    if(type == "win") {
+        document.getElementById("totalwins").innerHTML= wins;
+    } else {
+        document.getElementById("totallosses").innerHTML= losses;
+    }
 }
