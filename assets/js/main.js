@@ -132,7 +132,5 @@ function reset(type) {
         document.getElementById("totallosses").innerHTML= losses;
         document.getElementById("outcome").innerHTML= "OH NO!  The Empire defeated all your ships and sent the rebels packing! Click button above to play again...";
     }
-    var el = document.getElementById("overlay");
-    el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
 
