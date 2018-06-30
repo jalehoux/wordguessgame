@@ -75,6 +75,10 @@ function fillin(c) {
             reset("win");
         } else {
             document.getElementById("outcome").innerHTML= "CORRECT!  Keep guessing to destroy the Death Star!";
+            document.getElementById("outcome").style.color = "green";
+            setTimeout(function(){ 
+                document.getElementById("outcome").style.color = "black"; 
+            }, 1500);
         }
     } else {
         ships--;
@@ -84,6 +88,10 @@ function fillin(c) {
             losses ++;
             reset("loss");
         }
+        document.getElementById("outcome").style.color = "red";
+        setTimeout(function(){ 
+            document.getElementById("outcome").style.color = "black"; 
+        }, 1500);
     }      
 }
 
