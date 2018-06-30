@@ -73,10 +73,13 @@ function fillin(c) {
         if (numletters == 0) {
             wins++;
             reset("win");
+        } else {
+            document.getElementById("outcome").innerHTML= "CORRECT!  Keep guessing to destroy the Death Star!";
         }
     } else {
         ships--;
         document.getElementById("allships").innerHTML= ships;
+        document.getElementById("outcome").innerHTML= "WRONG! The Empire destroyed one of your ships...";
         if(ships == 0) {
             losses ++;
             reset("loss");
@@ -85,6 +88,12 @@ function fillin(c) {
 }
 
 function getword(type) {
+    if(arrword != undefined){
+        word='';
+        ships = 7;
+        answer= [];
+        numletters = 0;
+    }
     if(type == "chac") {
         word = characters[Math.floor(Math.random() * characters.length)];
     } else if(type =="veh") {
@@ -103,6 +112,7 @@ function getword(type) {
         }
         doc = answer.join(" ");
     })
+    document.getElementById("outcome").innerHTML= "Fight the Empire!  Choose a letter on your keyboard to start!";
     document.getElementById("hiddenword").innerHTML= doc;
     document.getElementById("numletters").innerHTML= numletters;
 }
@@ -117,7 +127,12 @@ function reset(type) {
     document.getElementById("allships").innerHTML= 7;
     if(type == "win") {
         document.getElementById("totalwins").innerHTML= wins;
+        document.getElementById("outcome").innerHTML= "WINNER! You destroyed the Death Star! Click button above to play again";
     } else {
         document.getElementById("totallosses").innerHTML= losses;
+        document.getElementById("outcome").innerHTML= "OH NO!  The Empire defeated all your ships and sent the rebels packing! Click button above to play again...";
     }
+    var el = document.getElementById("overlay");
+    el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
+

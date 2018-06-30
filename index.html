@@ -49,10 +49,18 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-lg-12" id="fullgame">
-                            <div id="word">
-                                <p class="title">Guess the word below!</p>
-                                <div id="hiddenword">
-                                    <span>No Word chosen!</span>
+                            <div class="row">
+                                <div id="word" class="col-lg-6">
+                                    <p class="title">Guess the word below!</p>
+                                    <div id="hiddenword">
+                                        <span>No Word chosen!</span>
+                                    </div>
+                                </div>
+                                <div id="status" class="col-lg-6">
+                                    <p class="title">Letter Outcome</p>
+                                    <div id="outcome">
+                                        <span></span>
+                                    </div>
                                 </div>
                             </div>
                         </div> 
@@ -64,30 +72,37 @@
                                 <p class="subtitle">Letters Already Guessed!</p>
                                 <div id="letters">No Letters Guessed</div>
                             </div>
-                            <div id="remaining">
-                                <p>Remaining Letters: <span id="numletters"></span></p>
-                            </div> 
-                            <div id="ships">
-                                <p>Remaining Ships: <span id="allships">7</span></p>
-                            </div>  
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div id="remaining">
+                                        <p>Remaining Letters: <span id="numletters"></span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6"> 
+                                    <div id="ships">
+                                        <p>Remaining Ships: <span id="allships">7</span></p>
+                                    </div>  
+                                </div>
+                            </div>
                         </div> 
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p class="title">Star Wars Fan Section</p>  
-                        </div> 
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
                             <p class="title">Lifetime Stats</p>  
                             <div id="stats">
                                 <p>Total Wins: <span id="totalwins">0</span></p>
                                 <p>Total Losses: <span id="totallosses">0</span></p>
-                                <p>Best Time <span id="besttime">00:00.00</span></p>
                             </div>
                         </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="title">Star Wars Fan Section</p>  
+                        </div>
+                        <div id="links">
+                        </div>
                     </div>
                 </div>
             </div>
