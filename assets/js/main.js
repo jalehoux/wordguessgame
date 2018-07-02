@@ -123,6 +123,7 @@ function getword(type) {
     document.getElementById("outcome").innerHTML= "Fight the Empire!  Choose a letter on your keyboard to start!";
     document.getElementById("hiddenword").innerHTML= doc;
     document.getElementById("numletters").innerHTML= numletters;
+    document.getElementById("letters").innerHTML= "No Letters Guessed!";
 }
 
 function reset(type) {
